@@ -1,0 +1,5 @@
+.vscode
+api-env
+__pycache__
+.env
+migrations

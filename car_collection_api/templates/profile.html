@@ -1,0 +1,21 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<header class="hero-section">
+    <h3 class="header-text">Welcome to Octane! {{ current_user.email }}</h3>
+</header>
+
+<div class="container">
+    <h3>Here are your profile details</h3>
+    <ul class="list-group">
+        <li class="list-grou-item">Email: {{ current_user.email }}</li>
+        <li class="list-grou-item">Token: {{ current_user.token }}</li>
+        {% if jwt %}
+        <li class="list-grou-item">API Access Key: <p>{{ jwt }}</p></li>
+        {% endif %}
+        <li class="list-grou-item">API Access Key: <p>None</p></li> <!--TODO: Add Access Key-->
+    </ul>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,159 @@
+/*Nav styles */
+
+body {
+font-family: sans-serif;
+
+}
+
+.ct-nav{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Target Main Logo Image */
+.ct-nav img{
+    display: inline;
+    width: 50%;
+    max-width: 100%;
+    padding-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+ul#horizontal-list{
+    min-width: 200px;
+    list-style: none;
+}
+
+ul#horizontal-list li, ul#horizontal-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.5vw;
+    color: black;
+}
+
+ul#horizontal-list a:nth-last-child(1){
+    border: 2px solid #ff6363;
+    border-radius: 11px;
+    margin-right: 0.2vw;
+}
+/* End of nav styles */
+
+
+/* start of hero/header section*/
+
+#header-intro{
+    background-image: url("../images/backgrounds/inventory.jpg");
+    background-position: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#title-intro{
+    text-align: center;
+    padding: 20%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#header-text{
+    padding: 2vw;
+    margin-top: 8%;
+}
+
+.header-image{
+    max-width: 102%;
+    height: auto;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+/* End of Hero/Header Section */
+
+
+/*Start of Middle Section styles */
+#middle-intro{
+    background-image: url("../images/backgrounds/tesla.jpg");
+    background-position: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#middle-intro h1{
+    text-align: center;
+    padding: 20%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#middle-text{
+padding: 2vw;
+margin-top: 8%;
+}
+
+/*End of Midle Section Styles*/
+
+/*Start of Features section styles*/
+#api-image,#graphql-image,#database-image{
+    margin-bottom: 10vh;
+}
+
+#features{
+    margin: 8vw;
+}
+/*End of Features section styles */
+
+/* Community Section Styles*/
+#bottom-intro{
+    background-image: url("../images/backgrounds/antique.jpg");
+    background-position: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 20%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+/*END of Community Section*/
+
+/*Footer Section Styles*/
+.footer-text-flex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vw;
+}
+
+#footer-logo{
+    width: 100%;
+    max-width: 100%;
+}
+
+#footer{
+    border-top: 3px solid black;
+    margin-top: 20vh;
+}
+
+/*profile styles*/
+.hero-section{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(30, 115,172, 0.7), rgba(142,57,153, 0.6)), url(../images/backgrounds/back_car.jpg);
+    background-size: cover;
+    background-position: 35% 50%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    position: relative;
+}
+
+.header-text{
+    display:flex;
+    justify-content: center;
+    padding-top: 20%;
+    left: 20rem;
+    top: 10rem;
+    color: white;
+}

@@ -1,0 +1,43 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat == 'auth-failed' %}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                        <button type = "button" class="close" data-dismiss = "alert">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<main class="container">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <h2>Sign In To Your Account</h2>
+            {% include 'shared/forms.html' %}
+        </aside>
+
+        <!-- todo: add button for google sign up -->
+        <div class = "google-choose">
+            <h4> OR </h4>
+        </div>
+        <!-- Button For Google Sign Up -->
+        <a href="{{ url_for('google_auth') }}">
+            <button class="btn btn-dark">
+                Sign In With Google
+            </button>
+        </a>
+
+        <aside class="col-12 col-md-6" id = "side-color" >
+        </aside>
+    </div>
+</main>
+
+{% endblock content %}

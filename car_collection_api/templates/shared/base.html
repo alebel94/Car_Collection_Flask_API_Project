@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="../../static/css/styles.css">
+<title>Car Collection API</title>
+</head>
+<body>
+
+    <!--NavBar here-->
+    <div class="container">
+        <nav class="ct-nav">
+            <div class="col-12 col-md-3">
+                <img src="../../static/images/octane_logo.png" alt="OCTANE_Logo">
+            </div>
+
+            <!--Nav Items-->
+            <div class="col-12 col-md-9">
+                <ul id="horizontal-list">
+                    <a href="">
+                        <li>Our Cars and Crossovers</li>
+                    </a>
+                    <a href="">
+                        <li>Our Hybrids and EVs </li>
+                    </a>
+                    <a href="{{ url_for('profile') }}">
+                        <li>Profile</li>
+                    </a>
+                    <a href="{{ url_for('logout') }}">
+                        <li>Log Out</li>
+                    </a>
+                    <a href="{{ url_for('signin') }}">
+                        <li>Sign In</li>
+                    </a>
+                    <a href="{{ url_for('signup') }}">
+                        <li>Sign Up Free</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <!--End of Nav-->
+        <!--Now flask comes into play-->
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+</html>

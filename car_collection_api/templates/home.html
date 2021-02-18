@@ -1,0 +1,169 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat == 'auth-success' %}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type = "button" class="close" data-dismiss = "alert">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div>
+    <!--Header Section-->
+    <header class="row">
+        <div class="col-12" id="header-intro">
+            <div id="title-intro">
+                <h1>Display your Collection</h1>
+                <h1>In The Octane API</h1>
+                <h1>By Alejandro</h1>
+            </div>
+        </div>
+        <div class="col-12 col-md-6" id="header-text">
+            <h2>Your collection could include sport vehicles</h2>
+            <h5>Create an amazing API tool for car collecting developers and enthusiasts</h5>
+            <div>
+                <button class="btn btn-primary">View Sport Vehicles</button>
+                <button class="btn btn-primary">View Luxuary</button>
+            </div>
+        </div>
+        <!--Header Image-->
+        <div class="col 12 col-md-6" >
+            <img class="header-image" src="../static/images/backgrounds/porsche.jpg"alt="porsche Image">
+        </div>
+    </header>
+    <!--End of Header Sectiom-->
+
+    <!--Start Middle Section-->
+    <div class="col-12" id="middle-intro">
+        <h1>Display your Electric Vehicles</h1>
+    </div>
+    <section class="row">
+        <div class="col 12 col-md-6" id="middle-img">
+            <img class="header-image" src="../static/images/backgrounds/charging_car.jpg"alt="Buggati Image">
+        </div>
+        <div class="col-12 col-md-6" id="middle-text">
+            <h2>Display your electric vehicles</h2>
+            <p>You can harness the power of an API to expand your EV collection!</p>
+            <div>
+                <button class="btn btn-primary">View Hybrid Vehicles</button>
+                <button class="btn btn-primary">View Electric Vehicles</button>
+            </div>
+        </div>
+    </section>
+    <!--End of Middle Section-->
+
+    <!--Collection of features section-->
+    <section class="row section" id="features">
+        <div class="col-12 col-md-4">
+            <img src="../static/images/api.png" alt="API Image" id="api-image">
+            <h4>Dedicated API Routes</h4>
+            <p>
+                If you are a fan of using traditional API routes , we have those for you!
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../static/images/graphql.png" alt="graphql-image" id="graphql-image">
+            <h4>GraphQL API Route</h4>
+            <p>
+                If you want ALL data from one endpoint, we have that too!
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../static/images/db.png" alt="database-image" id="database-image">
+            <h4>Backed by a PostrgreSQL Database</h4>
+            <p>
+                All data will be persisted inside of a secure Postgres Database.
+            </p>
+        </div>
+    </section>
+    <!--End of collection features-->
+
+    <section class="row">
+        <div class="col-12" id="bottom-intro">
+            <h4>Talk with like minded car collectors</h4>
+            <p>
+                Talk to other develepoers around the world and collaborate
+                on the projects with your data. Join our discord channel and give
+                a star to the project on Github!
+            </p>
+            <div>
+                <button class="btn btn-primary">View on Github</button>
+                <button class="btn btn-primary">Join Our Discord Channel!</button>
+            </div>
+        </div>
+    </section>
+    <!--End of community section-->
+
+    <!--Start of footer-->
+    <footer class="row" id="footer">
+        <div class="col-2 col-md-2">
+            <img src="../static/images/octane_logo.png" alt="Octane Logo" id="footer-logo">
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Platform</h4>
+                <p>Why Coding Drones?</p>
+                <p>The Coding Drones Project</p>
+                <p>Donate</p>
+                <p>Spread the Word</p>
+                <p>Our process</p>
+            </div>
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Platform</h4>
+                <p>Why Coding Drones?</p>
+                <p>The Coding Drones Project</p>
+                <p>Donate</p>
+                <p>Spread the Word</p>
+                <p>Our process</p>
+            </div>
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Platform</h4>
+                <p>Why Coding Drones?</p>
+                <p>The Coding Drones Project</p>
+                <p>Donate</p>
+                <p>Spread the Word</p>
+                <p>Our process</p>
+            </div>
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Platform</h4>
+                <p>Why Coding Drones?</p>
+                <p>The Coding Drones Project</p>
+                <p>Donate</p>
+                <p>Spread the Word</p>
+                <p>Our process</p>
+            </div>
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Platform</h4>
+                <p>Why Coding Drones?</p>
+                <p>The Coding Drones Project</p>
+                <p>Donate</p>
+                <p>Spread the Word</p>
+                <p>Our process</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{% endblock content %}
