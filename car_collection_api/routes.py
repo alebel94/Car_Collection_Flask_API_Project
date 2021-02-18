@@ -101,9 +101,14 @@ def create_car(current_user_token):
 @app.route('/cars', methods = ['GET'])
 @token_required
 def get_cars(current_user_token):
-    owner, current_user_token = verify_owner(current_user_token)
-    cars = Car.query.filter_by(user_id = owner.user_id).all()
-    response = car_schema.dump(cars)
+    try:
+        owner, current_user_token = verify_owner(current_user_token)
+    except:
+        bad_res = verify_owner(current_user_token)
+        return bad_res
+        
+    drones = Car.query.filter_by(user_id = owner.user_id).all()
+    response = cars_schema.dump(drones)
     return jsonify(response)
 
 
@@ -111,12 +116,51 @@ def get_cars(current_user_token):
 @app.route('/cars/<id>', methods= ['GET'])
 @token_required
 def get_car(current_user_token, id):
-    owner, current_user_token = verify_owner(current_user_token)
-    car = Car.query.get(id)
+    try:
+        owner, current_user_token = verify_owner(current_user_token)
+    except:
+        bad_res = verify_owner(current_user_token)
+        return bad_res
+    drone = Car.query.get(id)
+    response = car_schema.dump(drone)
+    return jsonify(response)
+
+# UPDATE DRONE ENDPOINT
+@app.route('/cars/<id>', methods = ['POST','PUT'])
+@token_required
+def update_car(current_user_token,id):
+    try:
+        owner, current_user_token = verify_owner(current_user_token)
+    except:
+        bad_res = verify_owner(current_user_token)
+        return bad_res
+
+
+    car = Car.query.get(id) # GET DRONE INSTANCE
+    car.name = request.json['name']
+    car.price = request.json['price']
+    car.model = request.json['model']
+
+    db.session.commit()
     response = car_schema.dump(car)
     return jsonify(response)
 
+# DELETE DRONE ENDPOINT
+@app.route('/cars/<id>', methods = ['DELETE'])
+@token_required
+def delete_car(current_user_token,id):
+    try:
+        owner, current_user_token = verify_owner(current_user_token)
+    except:
+        bad_res = verify_owner(current_user_token)
+        return bad_res
 
+    drone = Car.query.get(id)
+    db.session.delete(drone)
+    db.session.commit()
+
+    response = car_schema.dump(drone)
+    return jsonify(response)
 
     #Google OAUTH Routes and Config info
 google = oauth.register(
